@@ -1,0 +1,20 @@
+<?xml version="1.0"?> 
+<sdf version="1.4">
+  <world name="animated_box_world">
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://mbzirc</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+    	<uri>model://husky</uri>
+    	<rpy>0 0 0.7854</rpy>
+    </include> 
+
+  </world>
+</sdf>

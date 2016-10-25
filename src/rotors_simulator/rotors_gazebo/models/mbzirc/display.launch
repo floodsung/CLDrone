@@ -1,0 +1,10 @@
+<launch>  <!--rviz测试小车没问题的,启动指令roslaunch .gazebo/models/mbzirc/display.launch  model:=/home/zx/.gazebo/models/mbzirc/robot1.urdf
+-->
+	<arg name="model" />
+	<arg name="gui" default="False" />
+	<param name="robot_description" textfile="/home/zx/.gazebo/models/mbzirc/robot1.urdf" />
+	<param name="use_gui" value="$(arg gui)"/>
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" />
+</launch>

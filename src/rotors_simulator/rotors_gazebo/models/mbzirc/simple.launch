@@ -1,0 +1,5 @@
+<launch>  <!--测试世界的-->
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+<arg name="world_name" value="/home/zx/.gazebo/models/mbzirc/model-1_4.sdf"/>
+</include>
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+  <arg name="namespace" default="ardrone"/>
+  <node pkg="body_axis_velocity_controller" name="body_axis_velocity_controller_node" type="body_axis_velocity_controller_node">
+	<param name="namespace" value="$(arg namespace)" type="str"/>
+  </node>
+
+</launch>

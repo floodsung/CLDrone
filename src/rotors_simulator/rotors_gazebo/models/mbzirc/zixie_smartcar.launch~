@@ -1,0 +1,38 @@
+
+<launch> 
+<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+<param name="robot_description" textfile="/home/zx/.gazebo/models/mbzirc/smartcar.urdf"/>
+ <param name="/use_sim_time" value="true" />
+
+<node name="smartcar_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model smartcar -param robot_description"/>
+
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+<param name="use_gui" value="FALSE"/>
+</node>
+
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+<node name="rviz" pkg="rviz" type="rviz" args="-d /home/zx/.gazebo/models/mbzirc/urdf.rviz" />
+
+</launch>
+
+ <!--这里没成功
+<launch>
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+  <param name="robot_description" textfile="/home/zx/.gazebo/models/mbzirc/robot1.urdf"/>
+
+  <node name="spawn_simplerobot" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description
+           -urdf
+           -model simplerobot"
+        respawn="false" output="screen"/>
+
+<node name="joint_state_publisher2" pkg="joint_state_publisher" type="joint_state_publisher" />
+<node name="robot_state_publisher2" pkg="robot_state_publisher" type="state_publisher" />
+<node name="rviz" pkg="rviz" type="rviz" />
+
+</launch>
+-->

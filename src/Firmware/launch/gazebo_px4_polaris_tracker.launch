@@ -1,0 +1,11 @@
+<launch>
+
+<include file="$(find px4)/launch/gazebo_ardrone_polaris_world.launch">
+</include>
+<include file="$(find px4)/launch/mavros_sitl.launch">
+</include>
+<include file="$(find apriltags)/launch/apriltags.launch">
+</include>
+<node pkg="body_axis_velocity_controller" name="body_axis_velocity_controller_node" type="body_axis_velocity_controller_node">
+</node>
+</launch>

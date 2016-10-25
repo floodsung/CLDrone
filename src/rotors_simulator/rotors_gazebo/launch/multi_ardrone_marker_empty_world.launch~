@@ -1,0 +1,57 @@
+<launch>
+  <arg name="enable_logging" default="false"/>
+  <arg name="enable_ground_truth" default="false"/>
+  <arg name="headless" default="false"/>
+  <arg name="gui" default="true"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find rotors_gazebo)/worlds/basic.world"/>
+    <!-- <arg name="debug" value="true" /> -->
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <include file="$(find px4)/launch/ardrone.launch">
+	<arg name="ns" value="ardrone1"/>
+	<arg name="mavlink_fcu_url" value="udp://localhost:14565@localhost:14560"/>
+  </include>
+  <include file="$(find px4)/launch/mavros_sitl.launch">
+	<arg name="ns" value="ardrone1"/>
+	<arg name="fcu_url" value="udp://localhost:14560@localhost:14565"/>
+	<arg name="gcs_url" value="" />
+  </include>
+  <group ns="ardrone1">
+  <include file="$(find rotors_gazebo)/launch/spawn_ardrone.launch">
+    <arg name="name" value="ardrone1"/>
+    <arg name="model" value="$(find rotors_description)/urdf/ardrone_marker.xacro" />
+    <arg name="enable_logging" value="$(arg enable_logging)" />
+    <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
+    <arg name="log_file" value="ardrone1"/>
+    <arg name="x" value="1.0"/>
+    <arg name="y" value="0"/>
+    <arg name="z" value="0.8"/>
+  </include>
+  </group>
+
+  <include file="$(find px4)/launch/ardrone.launch">
+	<arg name="ns" value="ardrone2"/>
+	<arg name="mavlink_fcu_url" value="udp://localhost:14575@localhost:14570"/>
+  </include>
+  <include file="$(find px4)/launch/mavros_sitl.launch">
+	<arg name="ns" value="ardrone2"/>
+	<arg name="fcu_url" value="udp://localhost:14570@localhost:14575"/>
+	<arg name="gcs_url" value="" />
+  </include>
+  <group ns="ardrone2">
+  <include file="$(find rotors_gazebo)/launch/spawn_ardrone.launch">
+    <arg name="name" value="ardrone2"/>
+    <arg name="model" value="$(find rotors_description)/urdf/ardrone_marker.xacro" />
+    <arg name="enable_logging" value="$(arg enable_logging)" />
+    <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
+    <arg name="log_file" value="ardrone2"/>
+    <arg name="x" value="0.0"/>
+    <arg name="y" value="0"/>
+    <arg name="z" value="0.8"/>
+  </include>
+  </group>
+</launch>

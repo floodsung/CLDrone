@@ -1,0 +1,20 @@
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <param name="robot_polaris" textfile="$(find polaris_description)/models/model-1_4.sdf" />
+    <node
+      name="spawn_model2"
+      pkg="gazebo_ros"
+      type="spawn_model"
+      args="-sdf -param robot_polaris -model polaris -x 5.0"
+      output="screen">
+    </node>
+
+</launch>

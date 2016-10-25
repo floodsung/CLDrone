@@ -1,0 +1,41 @@
+material StartingFloor/Floor
+{
+  receive_shadows on
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+
+      texture_unit
+      {
+        texture metal_ripped.png
+        filtering anistorpic
+        max_anisotropy 16
+      }
+    }
+  }
+}
+
+material StartingFloor/FloorStripped
+{
+  receive_shadows on
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+
+      texture_unit
+      {
+        texture marker26.jpg
+        filtering anistorpic
+        max_anisotropy 16
+      }
+    }
+  }
+}
+
+
