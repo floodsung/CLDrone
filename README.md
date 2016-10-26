@@ -72,6 +72,10 @@ The camera topics are:
 
 it is easy to access the image and do any processing such as object detection.
 
+## Developer
+
+me and [Weiwei Kong](https://github.com/weiweikong)
+
 ## Lisense
 BSD Lisense
 
