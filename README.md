@@ -59,7 +59,7 @@ rosrun rqt_image_view rqt_image_view
 ## How to develop
 
 ### About control
-There is rostopic for the quadrotor's velocity control using body coordinate:
+There is a rostopic for the quadrotor's velocity control using body coordinate:
 **/CLDrone/body_axis_velocity/cmd_vel**
 
 you can make a rosnode to publish quadrotor's velocity to this topic to control the quadrotor.
