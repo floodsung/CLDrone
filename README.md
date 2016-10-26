@@ -12,6 +12,7 @@ This is a project based on Pixhawk SITL, DRCSim and apriltag. The goal is to cre
 - [Apriltags](https://github.com/personalrobotics/apriltags)
 - [PX4](https://github.com/PX4/Firmware)
 - [DRCsim](https://bitbucket.org/osrf/drcsim)
+- [polaris](https://github.com/weiweikong/polaris_simulation_standalone)
 
 ## Test Platform
 
