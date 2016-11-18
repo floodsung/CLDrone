@@ -31,6 +31,10 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros-shadow-fixed/ubuntu/ trusty ma
 sudo apt-get update
 sudo apt-get -y install ros-indigo-mavros ros-indigo-mavros-extras
 
+## get rosinstall and some additional dependencies
+
+sudo apt-get -y install python-rosinstall ros-indigo-octomap-msgs ros-indigo-joy ros-indigo-geodesy unzip ros-indigo-octomap-ros
+
 ## install control_toolbox
 sudo apt-get install ros-indigo-control-toolbox
 
