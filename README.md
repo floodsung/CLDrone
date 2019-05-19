@@ -81,6 +81,6 @@ it is easy to access the image and do any processing such as object detection.
 
 me and [Weiwei Kong](https://github.com/weiweikong)
 
-## Lisense
-BSD Lisense
+## License
+BSD License
 
